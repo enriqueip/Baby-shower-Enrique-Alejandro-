@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baby Shower · Enrique Alejandro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Mrs+Saint+Delafield&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --check:      #B7C7DA;
+    --check-soft: #DCE5EF;
+    --paper:      #FDFCFA;
+    --ink:        #545F6C;
+    --ink-dark:   #3E4750;
+    --ink-soft:   #8792A0;
+    --accent:     #6E8AA3;
+    --line:       #C9D3DF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{height:100%;}
+  body{
+    font-family:'EB Garamond', serif;
+    color:var(--ink);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:22px 14px;
+
+    background-color:#ffffff;
+    background-image:
+      repeating-linear-gradient(0deg,  rgba(183,199,218,0.55) 0px, rgba(183,199,218,0.55) 26px, transparent 26px, transparent 52px),
+      repeating-linear-gradient(90deg, rgba(183,199,218,0.55) 0px, rgba(183,199,218,0.55) 26px, transparent 26px, transparent 52px);
+  }
+
+  .stage{ width:100%; max-width:420px; }
+
+  .frame{
+    background: var(--check-soft);
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0 26px 55px rgba(60,75,95,0.28);
+  }
+
+  .card{
+    position:relative;
+    background: var(--paper);
+    padding: 40px 28px 34px;
+    min-height: 560px;
+    border: 1px solid rgba(110,138,163,0.18);
+  }
+
+  .screen{ position:relative; }
+  .screen.hidden{ display:none; }
+  .fade-in{ animation: fadeIn .5s ease both; }
+  @keyframes fadeIn{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+
+  .eyebrow{
+    text-align:center;
+    font-family:'EB Garamond', serif;
+    font-style:italic;
+    font-size:16px;
+    color:var(--ink-soft);
+    letter-spacing:.02em;
+  }
+  .heading{
+    text-align:center;
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:38px;
+    line-height:1.08;
+    letter-spacing:.01em;
+    color:var(--ink-dark);
+    margin-top:10px;
+  }
+  .in-honor{
+    text-align:center;
+    font-family:'EB Garamond', serif;
+    font-style:italic;
+    font-size:16px;
+    color:var(--ink-soft);
+    margin-top:18px;
+  }
+  .middle-label{
+    text-align:center;
+    font-family:'Playfair Display', serif;
+    font-weight:500;
+    font-style:normal;
+    font-size:13px;
+    letter-spacing:.28em;
+    text-transform:none;
+    color:var(--ink-soft);
+    margin-top:18px;
+  }
+  .baby-name{
+    text-align:center;
+    font-family:'Mrs Saint Delafield', cursive;
+    font-size:46px;
+    color:var(--ink-dark);
+    margin-top:2px;
+  }
+
+  .intro-text{
+    text-align:center;
+    font-family:'EB Garamond', serif;
+    font-style:italic;
+    font-size:16px;
+    line-height:1.55;
+    color:var(--ink);
+    margin-top:20px;
+    padding:0 6px;
+  }
+
+  .divider{
+    width:40px; height:1px;
+    background:var(--line);
+    margin:22px auto;
+  }
+
+  .date-block{
+    text-align:center;
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    font-size:15px;
+    letter-spacing:.09em;
+    color:var(--ink-dark);
+    text-transform:uppercase;
+  }
+  .date-block .sub{
+    display:block;
+    font-family:'EB Garamond', serif;
+    font-style:italic;
+    font-weight:400;
+    text-transform:none;
+    letter-spacing:.02em;
+    font-size:15.5px;
+    color:var(--ink-soft);
+    margin-top:5px;
+  }
+
+  .btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    text-decoration:none;
+    font-family:'EB Garamond', serif;
+    font-weight:500;
+    font-size:15.5px;
+    letter-spacing:.03em;
+    padding:12px 18px;
+    border-radius:2px;
+    cursor:pointer;
+    transition: opacity .15s ease;
+  }
+  .btn:active{ opacity:.75; }
+  .btn-solid{
+    background: var(--accent);
+    color: var(--paper);
+    border:1px solid var(--accent);
+  }
+  .btn-outline{
+    background: transparent;
+    color: var(--ink-dark);
+    border: 1px solid var(--line);
+  }
+  .btn-dark{
+    background: var(--ink-dark);
+    color: var(--paper);
+    border: 1px solid var(--ink-dark);
+  }
+  .btn-text{
+    display:block;
+    text-align:center;
+    font-family:'EB Garamond', serif;
+    font-style:italic;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    text-decoration:underline;
+    text-underline-offset:3px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    margin-top:16px;
+    width:100%;
+  }
+
+  .location-note{
+    text-align:center;
+    font-family:'EB Garamond', serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-top:10px;
+    margin-bottom:6px;
+  }
+
+  .footer-note{
+    text-align:center;
+    font-family:'Mrs Saint Delafield', cursive;
+    font-size:28px;
+    color:var(--accent);
+    margin-top:6px;
+  }
+
+  .btn-stack{ margin-top:18px; }
+  .btn-stack .btn{ margin-top:12px; }
+  .btn-stack .btn:first-child{ margin-top:0; }
+
+  /* page 2 */
+  .section-title{
+    text-align:center;
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:26px;
+    letter-spacing:.03em;
+    color:var(--ink-dark);
+    margin-top:6px;
+  }
+  .section-sub{
+    text-align:center;
+    font-family:'EB Garamond', serif;
+    font-style:italic;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    margin-top:8px;
+    margin-bottom:22px;
+  }
+  .panel{
+    border: 1px solid var(--line);
+    padding: 20px 18px 22px;
+    margin-bottom: 18px;
+  }
+  .panel-title{
+    text-align:center;
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-dark);
+    margin-bottom:10px;
+  }
+  .panel-text{
+    text-align:center;
+    font-family:'EB Garamond', serif;
+    font-style:italic;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    line-height:1.5;
+    margin-bottom:16px;
+  }
+  .field{ margin-bottom:16px; }
+  .field label{
+    display:block;
+    text-align:center;
+    font-family:'EB Garamond', serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-bottom:6px;
+  }
+  .field input{
+    display:block;
+    width:100%;
+    text-align:center;
+    border:none;
+    border-bottom:1px solid var(--line);
+    background: transparent;
+    color:var(--ink-dark);
+    font-family:'EB Garamond', serif;
+    font-size:16px;
+    padding:6px 4px 8px;
+  }
+  .field input:focus{ outline:none; border-bottom-color:var(--accent); }
+  .row-2{ display:flex; gap:16px; }
+  .row-2 .field{ flex:1; }
+
+  .tabbar{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-top:20px;
+  }
+  .dot{ width:5px; height:5px; border-radius:50%; background: var(--line); }
+  .dot.active{ background: var(--accent); }
+
+  @media (max-width:360px){
+    .heading{ font-size:32px; }
+    .baby-name{ font-size:40px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div class="frame">
+    <div class="card">
+
+      <!-- ===================== PAGE 1: DETAILS ===================== -->
+      <div id="page-details" class="screen fade-in">
+        <p class="eyebrow">Celebremos juntos el</p>
+        <p class="heading">BABY<br>SHOWER</p>
+        <p class="middle-label">de</p>
+        <div class="baby-name">Enrique Alejandro</div>
+
+        <p class="intro-text">Estamos preparando una tarde muy especial para celebrar la llegada de nuestro pequeño Kike. ¡Nos encantará compartir este momento contigo!</p>
+
+        <div class="divider"></div>
+
+        <div class="date-block">
+          Sábado, 14 de noviembre de 2026
+          <span class="sub">de 16:00 a 21:00 h</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="btn-stack">
+          <a class="btn btn-outline" href="https://maps.app.goo.gl/1yMcVvmHvoAZxLfJ7?g_st=iw" target="_blank" rel="noopener">
+            Ver ubicación
+          </a>
+          <a class="btn btn-solid" href="https://www.amazon.es/baby-reg/enriquealejandro-iadarolarondon-febrero-2027-benimamet-beniferri/1VEFZH94K0THQ?ref_=cm_sw_r_apin_dp_S0Z4B4GZ8EGJAJEFK94F&language=en-US" target="_blank" rel="noopener">
+            Lista de regalo
+          </a>
+          <button class="btn btn-dark" onclick="goTo('page-rsvp')">
+            Entra aquí y confirma tu asistencia
+          </button>
+        </div>
+
+      </div>
+
+      <!-- ===================== PAGE 2: GIFTS + RSVP ===================== -->
+      <div id="page-rsvp" class="screen hidden">
+        <p class="section-title" style="text-align:center;">Lista de regalos</p>
+        <p class="section-sub">Lista de Nacimiento de Enrique Alejandro Iadarola Rondón</p>
+
+        <div class="panel">
+          <p class="panel-title">Registro en Amazon</p>
+          <p class="panel-text">Puedes ver y reservar los regalos directamente desde la lista de nacimiento.</p>
+          <a class="btn btn-solid" href="https://www.amazon.es/baby-reg/enriquealejandro-iadarolarondon-febrero-2027-benimamet-beniferri/1VEFZH94K0THQ?ref_=cm_sw_r_apin_dp_S0Z4B4GZ8EGJAJEFK94F&language=en-US" target="_blank" rel="noopener">
+            Ver lista de regalos
+          </a>
+        </div>
+
+        <div class="panel">
+          <p class="panel-title">Confirmar asistencia</p>
+          <p class="panel-text">Cuéntanos cuántas personas vendrán y te llevamos directo a WhatsApp para confirmar.</p>
+
+          <div class="field">
+            <label for="fam-name">Nombre de los asistentes</label>
+            <input id="fam-name" type="text" placeholder="Ej: María, Juan y Sofía" required>
+          </div>
+
+          <div class="row-2">
+            <div class="field">
+              <label for="adults">Adultos</label>
+              <input id="adults" type="number" min="0" value="1" inputmode="numeric" required>
+            </div>
+            <div class="field">
+              <label for="kids">Niños</label>
+              <input id="kids" type="number" min="0" value="0" inputmode="numeric" required>
+            </div>
+          </div>
+
+          <button class="btn btn-solid" onclick="sendWhatsApp()" style="border:none; margin-top:4px;">
+            Selecciona para confirmar asistencia
+          </button>
+        </div>
+
+        <button class="btn-text" onclick="goTo('page-details')">
+          Volver a los detalles
+        </button>
+      </div>
+
+      <div class="tabbar">
+        <div class="dot" id="dot-details"></div>
+        <div class="dot" id="dot-rsvp"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  // ⚠️ Reemplaza este número por el WhatsApp real (código de país + número, sin espacios ni "+")
+  // Ejemplo España: "34600123456"
+  const WHATSAPP_NUMBER = "34658885445";
+
+  function goTo(id){
+    document.querySelectorAll('.screen').forEach(s => s.classList.add('hidden'));
+    const target = document.getElementById(id);
+    target.classList.remove('hidden');
+    target.classList.remove('fade-in');
+    void target.offsetWidth;
+    target.classList.add('fade-in');
+    updateDots(id);
+  }
+
+  function updateDots(id){
+    document.getElementById('dot-details').classList.toggle('active', id === 'page-details');
+    document.getElementById('dot-rsvp').classList.toggle('active', id === 'page-rsvp');
+  }
+  updateDots('page-details');
+
+  function sendWhatsApp(){
+    const name = document.getElementById('fam-name').value.trim();
+    const adultsRaw = document.getElementById('adults').value;
+    const kidsRaw = document.getElementById('kids').value;
+    const adults = parseInt(adultsRaw, 10) || 0;
+    const kids = parseInt(kidsRaw, 10) || 0;
+
+    if(!name){
+      alert('Por favor, escribe el nombre de las personas que asistirán.');
+      document.getElementById('fam-name').focus();
+      return;
+    }
+    if(adultsRaw === '' || kidsRaw === ''){
+      alert('Por favor, indica la cantidad de adultos y niños.');
+      return;
+    }
+    if(adults === 0 && kids === 0){
+      alert('Por favor, indica al menos un asistente (adulto o niño).');
+      return;
+    }
+
+    let msg = 'Hola! Confirmo asistencia al baby shower de Enrique Alejandro (14/11/2026).';
+    msg += ' Asistentes: ' + name + '.';
+    msg += ' Adultos: ' + adults + '. Niños: ' + kids + '.';
+
+    const url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>
